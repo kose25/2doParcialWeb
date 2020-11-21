@@ -39,8 +39,8 @@
         <div class="row">
             
             
-            <jsp:useBean id="TiendaDAO" class="tiendaU.dao.TiendaDao" scope="request"></jsp:useBean>
-            <c:forEach var="t" items="${TiendaDao.findAll()}">
+            <jsp:useBean id="PS" class="tiendaU.dao.TiendaDao" scope="request"></jsp:useBean>
+            <c:forEach var="t" items="${PS.list()}">
             <!-- Team member -->
             <div class="col-xs-12 col-sm-6 col-md-4">
                 <div class="image-flip" >
