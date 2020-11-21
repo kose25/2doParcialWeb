@@ -67,7 +67,7 @@
 											for="inputWeb">Web</label>
 									</div>
 									<div class="form-label-group">
-										<input type="input" id="inputImagen" name="imagen"
+										<input type="url" id="inputImagen" name="imagen"
 											class="form-control" placeholder="Imagen" required> <label
 											for="inputImagen">Imagen</label>
 									</div>
