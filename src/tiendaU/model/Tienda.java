@@ -35,10 +35,35 @@ public class Tienda implements Serializable {
 	private String propietario;
 
 	private String web;
+	
+	
+	//bi-directional many-to-many association to Cliente
+		@ManyToMany
+		@JoinTable(
+			name="seguir"
+			, joinColumns={
+				@JoinColumn(name="tienda")
+				}
+			, inverseJoinColumns={
+				@JoinColumn(name="cliente")
+				}
+			)
+		private List<Cliente> clientes;
 
 	//bi-directional many-to-one association to Servicio
 	@OneToMany(mappedBy="tiendaBean")
 	private List<Servicio> servicios;
+	
+	
+	
+
+	public List<Cliente> getClientes() {
+		return clientes;
+	}
+
+	public void setClientes(List<Cliente> clientes) {
+		this.clientes = clientes;
+	}
 
 	public Tienda() {
 	}

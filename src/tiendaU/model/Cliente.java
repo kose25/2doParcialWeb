@@ -1,6 +1,8 @@
 package tiendaU.model;
 
 import java.io.Serializable;
+import java.util.List;
+
 import javax.persistence.*;
 
 
@@ -21,6 +23,21 @@ public class Cliente implements Serializable {
 	private String email;
 
 	private String nombre;
+	
+	//bi-directional many-to-many association to Tienda
+		@ManyToMany(mappedBy="clientes")
+		private List<Tienda> tiendas;
+		
+		
+		
+
+	public List<Tienda> getTiendas() {
+			return tiendas;
+		}
+
+		public void setTiendas(List<Tienda> tiendas) {
+			this.tiendas = tiendas;
+		}
 
 	public Cliente() {
 	}
